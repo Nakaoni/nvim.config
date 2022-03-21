@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["darkplus.nvim"] = {
+    loaded = true,
+    path = "/home/erwin/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
+    url = "https://github.com/LunarVim/darkplus.nvim"
+  },
   fd = {
     loaded = true,
     path = "/home/erwin/.local/share/nvim/site/pack/packer/start/fd",

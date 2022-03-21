@@ -2,5 +2,5 @@
 
 require "user.options"
 require "user.keymaps"
-require "plugins"
-
+require "user.plugins"
+require "user.colors"
