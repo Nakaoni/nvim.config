@@ -28,6 +28,16 @@ return require('packer').startup(function(use)
   -- Package Manager
   use "wbthomason/packer.nvim" 
 
+  use "hrsh7th/nvim-cmp" -- completion plugin
+  use "hrsh7th/cmp-buffer" -- buffer completions
+  use "hrsh7th/cmp-path" -- path completions
+  use "hrsh7th/cmp-cmdline" -- command line completions
+  use "saadparwaiz1/cmp_luasnip"
+
+  -- snippets
+  use "L3MON4D3/LuaSnip"
+  use "rafamadriz/friendly-snippets"
+
   use {
       'nvim-telescope/telescope.nvim',
       requires = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'sharkdp/fd', 'nvim-treesitter/nvim-treesitter' }
