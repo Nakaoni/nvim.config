@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
 
+  -- Fuzzy finder
   use {
       'nvim-telescope/telescope.nvim',
       requires = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'sharkdp/fd', 'nvim-treesitter/nvim-treesitter' }
@@ -45,6 +46,16 @@ return require('packer').startup(function(use)
 
   -- Colorscheme
   use "LunarVim/darkplus.nvim" 
+  use "Mofiqul/vscode.nvim"
+
+  -- Inactive windows
+  use "sunjon/shade.nvim"
+
+  -- Status line
+  use "nvim-lualine/lualine.nvim"
+
+  -- Dashboard
+  use "glepnir/dashboard-nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
