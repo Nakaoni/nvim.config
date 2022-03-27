@@ -8,4 +8,5 @@ require "user.cmp"
 require "user.telescope"
 require "user.shade"
 require "user.lualine"
+require "user.lsp"
 

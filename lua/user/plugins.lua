@@ -32,6 +32,8 @@ return require('packer').startup(function(use)
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- command line completions
+  use "hrsh7th/cmp-nvim-lsp" 
+  use "hrsh7th/cmp-nvim-lua" 
   use "saadparwaiz1/cmp_luasnip"
 
   -- snippets
@@ -54,9 +56,10 @@ return require('packer').startup(function(use)
   -- Status line
   use "nvim-lualine/lualine.nvim"
 
-  -- Dashboard
-  use "glepnir/dashboard-nvim"
-
+  -- LSP
+  use "neovim/nvim-lspconfig"
+  use "williamboman/nvim-lsp-installer"
+  
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

@@ -8,6 +8,34 @@ if not snip_status_ok then
     return
 end
 
+local kind_icons = {
+  Text = "",
+  Method = "m",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "",
+  Interface = "",
+  Module = "",
+  Property = "",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
+
 cmp.setup({
     snippet = {
       expand = function(args)
@@ -25,13 +53,31 @@ cmp.setup({
         i = cmp.mapping.abort(),
         c = cmp.mapping.close(),
       }),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      -- Accept currently selected item. 
+      -- Set `select` to `false` to only confirm explicitly selected items.
+      ['<CR>'] = cmp.mapping.confirm({ select = true }),    
+      ['<Tab>'] = cmp.mapping.confirm({ select = true }),    
     },
-    sources = cmp.config.sources({
+    formatting = {
+      fields = { "kind", "abbr", "menu" },
+      format = function(entry, vim_item)
+          vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+
+          vim_item.menu = ({
+            nvim_lsp = "[LSP]",
+            nvim_lua = "[NVIM_LUA]",
+            luasnip = "[Snippet]",
+            buffer = "[Buffer]",
+          })[entry.source.name]
+
+          return vim_item
+      end,
+    },
+    sources = {
       { name = 'nvim_lsp' },
+      { name = 'nvim_lua' },
       { name = 'luasnip' }, -- For luasnip users.
-    }, {
       { name = 'buffer' },
-    })
+    },
 })
 
