@@ -24,17 +24,33 @@ keymap("n", "<leader>h", ":split<CR>", opts)
 keymap("n", "<leader>v", ":vsplit<CR>", opts)
 
 -- Window navigation
-keymap("n", "<C-Up>", "<C-w>k", opts)
-keymap("n", "<C-Down>", "<C-w>j", opts)
-keymap("n", "<C-Left>", "<C-w>h", opts)
-keymap("n", "<C-Right>", "<C-w>l", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-w>", "<C-w>j", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
+
+-- Window resize
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+keymap("n", "<C-left>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Hide highlight search until next search
 keymap("n", "<leader>/", ":noh<CR>", opts)
 
 -- Telescope mapping
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+-- keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
+
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- Move text up and down
+keymap("n", "<A-j>", "<Esc>:m .+1<CR>", opts)
+keymap("n", "<A-k>", "<Esc>:m .-2<CR>", opts)
+
+keymap("v", "<A-j>", ":m .+1<CR>", opts)
+keymap("v", "<A-k>", ":m .-2<CR>", opts)
 
