@@ -16,9 +16,6 @@ vim.g.maplocalleader = ","
 
 -- Normal mode
 
--- Open Left Explorer
-keymap("n", "<leader>m", ":Lex 20<CR>", opts)
-
 -- Window split creation
 keymap("n", "<leader>h", ":split<CR>", opts)
 keymap("n", "<leader>v", ":vsplit<CR>", opts)
@@ -53,4 +50,10 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>", opts)
 
 keymap("v", "<A-j>", ":m .+1<CR>", opts)
 keymap("v", "<A-k>", ":m .-2<CR>", opts)
+
+-- Nvimtree
+keymap("n", "<leader>m", ":NvimTreeToggle<CR>", opts)
+
+-- vim-bbye
+keymap("n", "<leader>q", ":Bdelete<CR>", opts)
 

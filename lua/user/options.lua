@@ -5,7 +5,7 @@ local options = {
     number = true,               -- Display line numbers
     relativenumber = true,       -- Display line numbers relative to cursor position
     expandtab = true,            -- Usage of spaces to insert a tab in Insert mode
-    softtabstop = 4,             -- Number of spaces for tabs 
+    softtabstop = 4,             -- Number of spaces for tabs
     shiftwidth = 4,              -- Number of spaces to use for each step of (auto)indent
     autoindent = true,           --
     clipboard = "unnamedplus",   --
@@ -27,7 +27,8 @@ local options = {
     wrap = false,                --
     scrolloff = 8,               --
     sidescrolloff = 8,           --
-}                                
+    termguicolors = true,
+}
 
 for key, value in pairs(options) do
     vim.opt[key] = value

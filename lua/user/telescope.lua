@@ -4,10 +4,18 @@ if not telescope_status_ok then
 end
 
 telescope.setup({
+    defaults = {
+        prompt_prefix = " ",
+        selection_caret = " ",
+        path_display = { "smart" },
+    },
     pickers = {
         find_files = {
             theme = "dropdown",
         }
-    }
+    },
+    extensions = {
+        media_files = {}
+    },
 })
 
