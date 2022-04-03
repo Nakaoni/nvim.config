@@ -67,7 +67,7 @@ return require('packer').startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
-  -- use "jose-elias-alvarez/null-ls.nvim" -- For formatters and linters
+  use "jose-elias-alvarez/null-ls.nvim" -- For formatters and linters
 
   -- Autopairs
   use "windwp/nvim-autopairs"
