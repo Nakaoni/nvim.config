@@ -57,3 +57,5 @@ keymap("n", "<leader>m", ":NvimTreeToggle<CR>", opts)
 -- vim-bbye
 keymap("n", "<leader>q", ":Bdelete<CR>", opts)
 
+-- Format
+keymap("n", "<leader>f", ":lua vim.lsp.buf.formatting_sync()<CR>", opts)
