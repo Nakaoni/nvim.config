@@ -14,6 +14,11 @@ configs.setup {
     },
     rainbow = {
         enable = true,
+        colors = {
+            "#87cefa", -- LightSkyBlue
+            "#da70d6", -- Orchid
+            "#ffd700", -- Gold
+        }
     }
 }
 

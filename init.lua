@@ -1,20 +1,20 @@
 -- Nakaoni's Neovim Configuration File
 
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colors"
-require "user.cmp"
-require "user.telescope"
-require "user.shade"
-require "user.lualine"
-require "user.lsp"
-require "user.treesitter"
-require "user.autopairs"
-require "user.comments"
-require "user.gitsigns"
-require "user.nvim-tree"
-require "user.bufferline"
-require "user.dashboard"
-require "user.indentline"
+require("user.options")
+require("user.keymaps")
+require("user.plugins")
+require("user.colors")
+require("user.cmp")
+require("user.telescope")
+require("user.shade")
+require("user.lualine")
+require("user.lsp")
+require("user.treesitter")
+require("user.autopairs")
+require("user.comments")
+require("user.gitsigns")
+require("user.nvim-tree")
+require("user.bufferline")
+require("user.dashboard")
+require("user.indentline")
 
