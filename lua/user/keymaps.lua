@@ -48,9 +48,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>", opts)
 
-keymap("v", "<A-j>", ":m .+1<CR>", opts)
-keymap("v", "<A-k>", ":m .-2<CR>", opts)
-
 -- Nvimtree
 keymap("n", "<leader>m", ":NvimTreeToggle<CR>", opts)
 
@@ -59,3 +56,20 @@ keymap("n", "<leader>q", ":Bdelete<CR>", opts)
 
 -- Format
 keymap("n", "<leader>f", ":lua vim.lsp.buf.formatting_sync()<CR>", opts)
+
+-- Visual mode
+
+keymap("v", "<A-j>", ":m .+1<CR>", opts)
+keymap("v", "<A-k>", ":m .-2<CR>", opts)
+
+
+-- Terminal mode
+
+-- ToggleTerm
+keymap("n", "<C-_>", ":ToggleTerm<CR>", opts)
+keymap("t", "<Esc>", [[ <C-\><C-n> ]], opts)
+keymap("t", "<C-h>", [[ <C-\><C-n><C-W>h ]], opts)
+keymap("t", "<C-j>", [[ <C-\><C-n><C-W>j ]], opts)
+keymap("t", "<C-k>", [[ <C-\><C-n><C-W>k ]], opts)
+keymap("t", "<C-l>", [[ <C-\><C-n><C-W>l ]], opts)
+

@@ -92,6 +92,9 @@ return require('packer').startup(function(use)
   -- Dashboard
   use "glepnir/dashboard-nvim"
 
+  -- Terminal
+  use "akinsho/toggleterm.nvim"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
