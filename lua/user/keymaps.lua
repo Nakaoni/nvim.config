@@ -62,19 +62,13 @@ keymap("n", "<leader>f", ":lua vim.lsp.buf.formatting_sync()<CR>", opts)
 keymap("v", "<A-j>", ":m .+1<CR>", opts)
 keymap("v", "<A-k>", ":m .-2<CR>", opts)
 
-
 -- Terminal mode
 
 -- ToggleTerm
 keymap("n", "<C-_>", ":ToggleTerm<CR>", opts)
 
-function set_terminal_keymaps()
-    keymap("t", "<Esc>", [[ <C-\><C-n> ]], opts)
-    keymap("t", "<C-h>", [[ <C-\><C-n><C-W>h ]], opts)
-    keymap("t", "<C-j>", [[ <C-\><C-n><C-W>j ]], opts)
-    keymap("t", "<C-k>", [[ <C-\><C-n><C-W>k ]], opts)
-    -- keymap("t", "<C-l>", [[ <C-\><C-n><C-W>l ]], opts)
-end
-
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-
+keymap("t", "<Esc>", [[ <C-\><C-n> ]], opts)
+-- keymap("t", "<C-h>", [[ <C-\><C-n><C-W>h ]], opts)
+-- keymap("t", "<C-j>", [[ <C-\><C-n><C-W>j ]], opts)
+-- keymap("t", "<C-k>", [[ <C-\><C-n><C-W>k ]], opts)
+-- keymap("t", "<C-l>", [[ <C-\><C-n><C-W>l ]], opts)

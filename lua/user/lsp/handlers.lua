@@ -23,7 +23,6 @@ M.setup = function()
     }
 
     vim.diagnostic.config(config)
-
 end
 
 local function lsp_keymaps(bufnr)
@@ -41,15 +40,10 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>d", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-    vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
-    vim.cmd [[
-        autocmd!
-        autocmd BufWritePre * silent! :%s/\s*$//g
-    ]]
 end
 
-M.on_attach = function (client, bufnr)
-   lsp_keymaps(bufnr)
+M.on_attach = function(client, bufnr)
+    lsp_keymaps(bufnr)
 end
 
 local capabitilies = vim.lsp.protocol.make_client_capabilities()
@@ -62,4 +56,3 @@ end
 M.capabitilies = cmp_nvim_lsp.update_capabilities(capabitilies)
 
 return M
-
