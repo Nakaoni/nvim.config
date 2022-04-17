@@ -1,11 +1,11 @@
 local status_ok, autopairs = pcall(require, "nvim-autopairs")
 if not status_ok then
-  return
+    return
 end
 
-autopairs.setup {
+autopairs.setup({
     check_ts = true,
-    ts_config = { 
+    ts_config = {
         lua = { "string", "source" },
         javascript = { "string", "template_string" },
         java = false,
@@ -22,6 +22,5 @@ autopairs.setup {
         check_comma = true,
         highlight = "PmenuSel",
         highlight_grey = "LineNr",
-  },
-}
-
+    },
+})
