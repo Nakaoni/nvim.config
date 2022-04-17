@@ -27,7 +27,7 @@ local options = {
     wrap = false,                --
     scrolloff = 8,               --
     sidescrolloff = 8,           --
-    termguicolors = true,
+    termguicolors = false,
 }
 
 for key, value in pairs(options) do

@@ -18,4 +18,3 @@ require("user.bufferline")
 require("user.dashboard")
 require("user.indentline")
 require("user.toggleterm")
-
