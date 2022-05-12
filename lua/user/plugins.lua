@@ -57,13 +57,19 @@ return require("packer").startup(function(use)
     -- Fuzzy finder
     use({
         "nvim-telescope/telescope.nvim",
-        requires = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep", "sharkdp/fd" },
+        requires = { { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep", "sharkdp/fd" } },
     })
     use("nvim-telescope/telescope-media-files.nvim")
 
     -- Colorscheme
     use("LunarVim/darkplus.nvim")
     use("Mofiqul/vscode.nvim")
+    use("projekt0n/github-nvim-theme")
+    use({
+        'rose-pine/neovim',
+        as = 'rose-pine',
+        tag = 'v1.*',
+    })
 
     -- Inactive windows
     use("sunjon/shade.nvim")
