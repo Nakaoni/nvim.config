@@ -12,12 +12,14 @@ if not status_lspconfig_ok then
     return
 end
 
-require("user.lsp.handlers").setup()
+local handlers = require("user.lsp.handlers")
+handlers.setup()
+
 require("user.lsp.null-ls")
 
 lspconfig.sumneko_lua.setup({
     settings = {
-        lua = {
+        Lua = {
             format = {
                 enable = true,
             },
