@@ -39,3 +39,5 @@ lspconfig.sumneko_lua.setup({
 lspconfig.clangd.setup({})
 lspconfig.jsonls.setup({})
 lspconfig.jdtls.setup({})
+lspconfig.intelephense.setup({})
+lspconfig.phpactor.setup({})
