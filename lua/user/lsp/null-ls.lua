@@ -8,11 +8,29 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 
+local code_actions = null_ls.builtins.code_actions
+local completion = null_ls.builtins.completion
+
 null_ls.setup({
     sources = {
-        formatting.stylua,
+        code_actions.eslint,
+        code_actions.gitsigns,
+        completion.spell,
+        completion.luasnip,
+        completion.tags,
         diagnostics.eslint,
-        null_ls.builtins.completion.spell,
+        diagnostics.actionlint,
+        diagnostics.jsonlint,
+        diagnostics.luacheck,
+        diagnostics.php,
+        diagnostics.phpcs,
+        diagnostics.phpstan,
+        diagnostics.psalm,
+        formatting.stylua,
+        formatting.eslint,
+        formatting.fixjson,
+        formatting.phpcsfixer,
+        formatting.prettier,
     },
     on_attach = function(client)
         if client.resolved_capabilities.document_formatting then
