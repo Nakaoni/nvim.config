@@ -18,7 +18,7 @@ null_ls.setup({
         completion.spell,
         completion.luasnip,
         completion.tags,
-        diagnostics.eslint,
+        -- diagnostics.eslint,
         diagnostics.actionlint,
         diagnostics.jsonlint,
         diagnostics.luacheck,
