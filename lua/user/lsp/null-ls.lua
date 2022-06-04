@@ -11,7 +11,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
     sources = {
         formatting.stylua,
-        diagnostics.eslint,
+        -- diagnostics.eslint,
         null_ls.builtins.completion.spell,
     },
     on_attach = function(client)
