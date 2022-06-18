@@ -15,7 +15,5 @@ require("user.comments")
 require("user.gitsigns")
 require("user.nvim-tree")
 require("user.bufferline")
-require("user.dashboard")
 require("user.indentline")
 require("user.toggleterm")
-

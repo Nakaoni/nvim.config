@@ -37,8 +37,6 @@ lspconfig.sumneko_lua.setup({
 })
 
 lspconfig.clangd.setup({})
-lspconfig.jsonls.setup({})
-lspconfig.jdtls.setup({})
 -- lspconfig.eslint.setup({})
 lspconfig.html.setup({})
 lspconfig.emmet_ls.setup({})

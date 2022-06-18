@@ -68,22 +68,26 @@ return require("packer").startup(function(use)
     -- Snippets
     use({
         "L3MON4D3/LuaSnip",
-        commit = "52f4aed58db32a3a03211d31d2b12c0495c45580"
+        commit = "52f4aed58db32a3a03211d31d2b12c0495c45580",
     })
     use({
         "rafamadriz/friendly-snippets",
-        commit = "d27a83a363e61009278b6598703a763ce9c8e617"
+        commit = "d27a83a363e61009278b6598703a763ce9c8e617",
     })
 
     -- Treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
-        commit = "1b9157dd2d2b31d561c485b5c107dacb1dca6945"
+        commit = "1b9157dd2d2b31d561c485b5c107dacb1dca6945",
     })
     use({
         "p00f/nvim-ts-rainbow",
-        commit = "18cb3a45e0ff843d48e8637a36b9cc6cd89d71b0"
+        commit = "18cb3a45e0ff843d48e8637a36b9cc6cd89d71b0",
+    })
+    use({
+        "windwp/nvim-ts-autotag",
+        commit = "044a05c4c51051326900a53ba98fddacd15fea22",
     })
 
     -- Fuzzy finder
@@ -94,7 +98,7 @@ return require("packer").startup(function(use)
     })
     use({
         "nvim-telescope/telescope-media-files.nvim",
-        commit = "513e4ee385edd72bf0b35a217b7e39f84b6fe93c"
+        commit = "513e4ee385edd72bf0b35a217b7e39f84b6fe93c",
     })
 
     -- Colorscheme
@@ -102,12 +106,6 @@ return require("packer").startup(function(use)
         "rose-pine/neovim",
         as = "rose-pine",
         tag = "v1.*",
-    })
-
-    -- Inactive windows
-    use({
-        "sunjon/shade.nvim",
-        commit = "4286b5abc47d62d0c9ffb22a4f388b7bf2ac2461"
     })
 
     -- Status line
@@ -123,7 +121,7 @@ return require("packer").startup(function(use)
     -- LSP
     use({
         "neovim/nvim-lspconfig",
-        tag = "v0.*"
+        tag = "v0.*",
     })
     use({
         "williamboman/nvim-lsp-installer",
@@ -137,7 +135,7 @@ return require("packer").startup(function(use)
     -- Autopairs
     use({
         "windwp/nvim-autopairs",
-        commit = '84cde3547e9a8b16db0bfe523e98e19b7be5148b'
+        commit = "84cde3547e9a8b16db0bfe523e98e19b7be5148b",
     })
 
     -- Comments
@@ -165,7 +163,7 @@ return require("packer").startup(function(use)
     -- Bufferline
     use({
         "akinsho/bufferline.nvim",
-        tag = "v2.*"
+        tag = "v2.*",
     })
     use({
         "moll/vim-bbye",
@@ -176,12 +174,6 @@ return require("packer").startup(function(use)
     use({
         "lukas-reineke/indent-blankline.nvim",
         tag = "v2.*",
-    })
-
-    -- Dashboard
-    use({
-        "glepnir/dashboard-nvim",
-        commit = "3818e24998ae94e80a3adbad86521fb4899ab9fb",
     })
 
     -- Terminal
