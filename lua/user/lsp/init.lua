@@ -15,31 +15,40 @@ end
 local handlers = require("user.lsp.handlers")
 handlers.setup()
 
-require("user.lsp.null-ls")
-
-lspconfig.sumneko_lua.setup({
-    settings = {
-        Lua = {
-            format = {
-                enable = true,
-            },
-            diagnostics = {
-                globals = { "vim" },
-            },
-            workspace = {
-                library = {
-                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                    [vim.fn.stdpath("config") .. "/lua"] = true,
+-- For html, css, json, eslint, run: npm i -g vscode-langservers-extracted
+local servers = {
+    sumneko_lua = {
+        settings = {
+            Lua = {
+                format = {
+                    enable = true,
+                },
+                diagnostics = {
+                    globals = { "vim" },
+                },
+                workspace = {
+                    library = {
+                        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                        [vim.fn.stdpath("config") .. "/lua"] = true,
+                    },
                 },
             },
         },
     },
-})
+    clangd = {},
+    emmet_ls = {},
+    volar = {},
+    intelephense = {},
+    phpactor = {},
+    html = {},
+    cssls = {},
+    eslint = {},
+    jsonls = {},
+    yamlls = {},
+}
 
-lspconfig.clangd.setup({})
--- lspconfig.eslint.setup({})
-lspconfig.html.setup({})
-lspconfig.emmet_ls.setup({})
-lspconfig.volar.setup({})
-lspconfig.intelephense.setup({})
-lspconfig.phpactor.setup({})
+for server, setup_config in pairs(servers) do
+    lspconfig[server].setup(setup_config)
+end
+
+require("user.lsp.null-ls")

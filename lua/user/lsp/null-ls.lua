@@ -11,35 +11,35 @@ local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
 local completion = null_ls.builtins.completion
 
+local sources = {
+    code_actions.eslint,
+    code_actions.gitsigns,
+    -- completion.spell,
+    completion.luasnip,
+    -- completion.tags,
+    diagnostics.eslint,
+    diagnostics.actionlint,
+    diagnostics.jsonlint,
+    -- diagnostics.luacheck,
+    formatting.stylua,
+    formatting.eslint,
+    -- formatting.fixjson,
+    formatting.phpcsfixer,
+    formatting.prettier,
+}
+
 null_ls.setup({
-    sources = {
-        -- code_actions.eslint,
-        code_actions.gitsigns,
-        -- completion.spell,
-        completion.luasnip,
-        -- completion.tags,
-        -- diagnostics.eslint,
-        diagnostics.actionlint,
-        -- diagnostics.jsonlint,
-        -- diagnostics.luacheck,
-        diagnostics.php,
-        diagnostics.phpcs,
-        diagnostics.phpstan,
-        diagnostics.psalm,
-        formatting.stylua,
-        -- formatting.eslint,
-        -- formatting.fixjson,
-        formatting.phpcsfixer,
-        formatting.prettier,
-    },
+    sources = sources,
     on_attach = function(client)
         if client.resolved_capabilities.document_formatting then
-            vim.cmd([[
-                augroup LspFormatting
-                    autocmd! * <buffer>
-                    autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-                augroup END
-            ]])
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = bufnr,
+                callback = function()
+                    vim.lsp.buf.formatting_sync()
+                end,
+            })
         end
     end,
 })
