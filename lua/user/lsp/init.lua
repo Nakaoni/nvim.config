@@ -15,16 +15,30 @@ end
 local handlers = require("user.lsp.handlers")
 handlers.setup()
 
+local function loadDefaultConfig(client)
+    if client.resolved_capabilities.document_formatting then
+        vim.cmd([[
+            augroup LspFormatting
+                autocmd! * <buffer>
+                autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+            augroup END
+        ]])
+    end
+end
+
 -- For html, css, json, eslint, run: npm i -g vscode-langservers-extracted
 local servers = {
     sumneko_lua = {
+        on_attach = function(client)
+            loadDefaultConfig(client)
+        end,
         settings = {
             Lua = {
                 format = {
                     enable = true,
                 },
                 diagnostics = {
-                    globals = { "vim" },
+                    globals = { "vim", "augroup", "bufnr" },
                 },
                 workspace = {
                     library = {
@@ -38,7 +52,11 @@ local servers = {
     clangd = {},
     emmet_ls = {},
     volar = {},
-    intelephense = {},
+    intelephense = {
+        on_attach = function(client)
+            loadDefaultConfig(client)
+        end,
+    },
     phpactor = {},
     html = {},
     cssls = {},
@@ -51,4 +69,4 @@ for server, setup_config in pairs(servers) do
     lspconfig[server].setup(setup_config)
 end
 
-require("user.lsp.null-ls")
+-- require("user.lsp.null-ls")
