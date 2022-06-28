@@ -63,6 +63,24 @@ local servers = {
     eslint = {},
     jsonls = {},
     yamlls = {},
+    tsserver = {
+        on_attach = function(client)
+            loadDefaultConfig(client)
+        end,
+        settings = {
+            typescript = {
+                format = {
+                    indentSize = 2,
+                }
+            },
+            javascript = {
+                format = {
+                    indentSize = 2,
+                }
+            }
+        }
+    },
+    tailwindcss = {}
 }
 
 for server, setup_config in pairs(servers) do
