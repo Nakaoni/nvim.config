@@ -182,6 +182,12 @@ return require("packer").startup(function(use)
         commit = "aaeed9e02167c5e8f00f25156895a6fd95403af8",
     })
 
+    -- DAP
+    use({
+        "mfussenegger/nvim-dap",
+        commit = "3b5e4b77e81451db4c83fb3ee4aeb89711a8b539",
+    })
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
